@@ -1,0 +1,40 @@
+
+
+<!----><!--    <div class="table-responsive">-->
+<!--        <table>-->
+<!--            <thead>-->
+<!--                <tr>-->
+<!--                    <th>--><?//= $this->Paginator->sort('Id') ?><!--</th>-->
+<!--                    <th>--><?//= $this->Paginator->sort('Title') ?><!--</th>-->
+<!--                    <th>--><?//= $this->Paginator->sort('Content') ?><!--</th>-->
+<!--                    <th>--><?//= $this->Paginator->sort('Date') ?><!--</th>-->
+<!--                    <th class="actions">--><?//= __('Actions') ?><!--</th>-->
+<!--                </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--                --><?php //foreach ($posts as $post): ?>
+<!--                <tr>-->
+<!--                    <td>--><?//= $this->Number->format($post->Id) ?><!--</td>-->
+<!--                    <td>--><?//= h($post->Title) ?><!--</td>-->
+<!--                    <td>--><?//= h($post->Content) ?><!--</td>-->
+<!--                    <td>--><?//= h($post->Date) ?><!--</td>-->
+<!--                    <td class="actions">-->
+<!--                        --><?//= $this->Html->link(__('View'), ['action' => 'view', $post->Id]) ?>
+<!--                        --><?//= $this->Html->link(__('Edit'), ['action' => 'edit', $post->Id]) ?>
+<!--                        --><?//= $this->Form->postLink(__('Delete'), ['action' => 'delete', $post->Id], ['confirm' => __('Are you sure you want to delete # {0}?', $post->Id)]) ?>
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                --><?php //endforeach; ?>
+<!--            </tbody>-->
+<!--        </table>-->
+
+<div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
